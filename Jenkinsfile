@@ -5,10 +5,10 @@ pipeline {
         stage('Show Git Info') {
             steps {
                 script {
-                    // Print commit hash
+                    // Show commit hash
                     sh 'echo "Commit: $(git rev-parse HEAD)"'
 
-                    // Print repo name from git remote
+                    // Show repo name
                     sh 'echo "Repo: $(basename -s .git `git config --get remote.origin.url`)"'
                 }
             }
