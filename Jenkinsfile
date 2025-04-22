@@ -1,17 +1,7 @@
-pipeline {
-    agent any
-
-    stages {
-        stage('Show Git Info') {
-            steps {
-                script {
-                    // Show commit hash
-                    sh 'echo "Commit: $(git rev-parse HEAD)"'
-
-                    // Show repo name
-                    sh 'echo "Repo: $(basename -s .git `git config --get remote.origin.url`)"'
-                }
-            }
-        }
+node {
+    // This displays colors using the 'xterm' ansi color map.
+    ansiColor('xterm') {
+        // Just some echoes to show the ANSI color.
+        stage "\u001B[31mI'm Red\u001B[0m Now not"
     }
 }
