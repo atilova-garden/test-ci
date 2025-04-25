@@ -13,5 +13,13 @@ pipeline {
                  }
              }
          }
+
+      stage('Test Echo') {
+             steps {
+                 script {
+                     sh 'Test'
+                 }
+             }
+         }
      }
  }
